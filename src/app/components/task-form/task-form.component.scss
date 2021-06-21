@@ -1,0 +1,13 @@
+@import "utils/flex";
+
+.task {
+  &__form {
+    @include flex-layout(row, center, center);
+  }
+
+  &__button {
+    &-add {
+      margin-top: 8px;
+    }
+  }
+}

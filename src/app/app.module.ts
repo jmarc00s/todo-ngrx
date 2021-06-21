@@ -1,3 +1,4 @@
+import { TaskFormModule } from './components/task-form/task-form.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,7 +18,8 @@ import { TaskListModule } from './components/task-list/task-list.module';
     ReactiveFormsModule,
     BrowserModule,
     StoreModule.forRoot({state: tasks.reducer }),
-    TaskListModule
+    TaskListModule,
+    TaskFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

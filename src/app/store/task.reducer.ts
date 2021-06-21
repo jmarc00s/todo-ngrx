@@ -12,17 +12,18 @@ export const tasksReducer = createReducer(
   on(taskActions.addTask, (state, { task }) => ({ tasks: [...state.tasks, task ]})),
   on(taskActions.removeTask, (state, {id}) => ({ tasks: state.tasks.filter(task => task.id !== id)})),
   on(taskActions.toggleTaskDone, (state, {id}) => {
-    const tasks = state.tasks.filter(task => task.id !== id);
     const task = state.tasks.find(task => task.id === id);
+
     if(!task ){
       return {
-        tasks: [...tasks]
+        tasks: [...state.tasks]
       }
     }
 
-    const newTask = {...task, done: !task.done};
+    const taskDone = {...task, done: !task.done};
+
     return {
-      tasks: [...tasks, newTask]
+      tasks: [...state.tasks, taskDone]
     }
   })
 )

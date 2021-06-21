@@ -4,18 +4,10 @@
   &__section {
     @include flex-layout-column-center-center;
   }
+
   &__title {
     font-size: 1.6rem;
     font-weight: bold;
     padding: 8px 0;
-  }
-  &__form {
-    @include flex-layout(row, center, center);
-  }
-
-  &__button {
-    &-add {
-      margin-top: 8px;
-    }
   }
 }

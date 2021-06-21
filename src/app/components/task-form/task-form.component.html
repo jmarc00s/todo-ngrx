@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup" class="task__form">
+  <input
+    formControlName="description"
+    class="input"
+    type="text"
+    placeholder="Insira uma tarefa"
+  />
+  <button
+    [disabled]="formGroup?.invalid"
+    (click)="addTask($event)"
+    class="task__button-add btn btn-primary"
+  >
+    Adicionar
+  </button>
+</form>
