@@ -1,0 +1,12 @@
+@import "utils/flex";
+
+.task {
+  &__list {
+    width: 400px;
+    @include flex-layout-column-center-center;
+  }
+  &__card {
+    width: 100%;
+    margin: 5px auto;
+  }
+}

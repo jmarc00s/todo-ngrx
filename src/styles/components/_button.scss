@@ -1,0 +1,23 @@
+.btn {
+  padding: 8px;
+  border-radius: 5px;
+  margin: 0;
+  outline: none;
+  border: 0;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  color: $typo-primary-color;
+  font-size: large;
+  &:hover {
+    background-color: darken($color: $primary-color, $amount: 10%);
+    cursor: pointer;
+  }
+  &:disabled {
+    background-color: lighten($color: $primary-color, $amount: 60%);
+    color: $black;
+    cursor: default;
+  }
+}

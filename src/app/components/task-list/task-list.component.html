@@ -1,0 +1,7 @@
+<section class="task__list">
+  <app-task-card
+    class="task__card"
+    *ngFor="let task of tasks$ | async"
+    [task]="task"
+  ></app-task-card>
+</section>

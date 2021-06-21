@@ -1,0 +1,28 @@
+@import "utils/variables";
+@import "utils/flex";
+
+.taskcard {
+  &__body {
+    height: 36px;
+    max-width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0.5px 0.5px rgba($color: $primary-color, $alpha: 0.5);
+    @include flex-layout-column-center-center;
+    cursor: pointer;
+  }
+
+  &__description {
+    text-align: center;
+  }
+
+  &__status-done {
+    background-color: $secondary-color;
+    color: $typo-primary-color;
+  }
+
+  &__status-notdone {
+    background-color: tomato;
+    color: $typo-primary-color;
+  }
+}

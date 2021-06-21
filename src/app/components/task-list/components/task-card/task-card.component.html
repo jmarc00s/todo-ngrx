@@ -1,0 +1,11 @@
+<div
+  (click)="toggleTaskDone()"
+  class="taskcard__body"
+  [ngClass]="{
+    'taskcard__status-done': task.done,
+    'taskcard__status-notdone': !task.done
+  }"
+>
+  <p class="taskcard__description">{{ task.description }}</p>
+  <p class="taskcard__status">{{ taskStatus }}</p>
+</div>
