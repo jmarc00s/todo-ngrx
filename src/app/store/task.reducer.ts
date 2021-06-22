@@ -9,23 +9,24 @@ export const initialState: State = {
 
 export const tasksReducer = createReducer(
   initialState,
-  on(taskActions.addTask, (state, { task }) => ({ tasks: [...state.tasks, task ]})),
-  on(taskActions.removeTask, (state, {id}) => ({ tasks: state.tasks.filter(task => task.id !== id)})),
-  on(taskActions.toggleTaskDone, (state, {id}) => {
-    const tasks = state.tasks.filter(task => task.id !== id);
-    const task = state.tasks.find(task => task.id === id);
-    if(!task ){
-      return {
-        tasks: [...tasks]
+  on(taskActions.addTask, (state, { task }) => ({ tasks: [...state.tasks, task] })),
+  on(taskActions.removeTask, (state, { id }) => ({ tasks: state.tasks.filter(task => task.id !== id) })),
+  on(taskActions.toggleTaskDone, (state, { id }) => {
+    const tasks = state.tasks.map(task => {
+      if (task.id === id) {
+        return {
+          ...task,
+          done: !task.done
+        } as TaskModel
       }
-    }
-    const taskDone = {...task, done: !task.done};
+      return task
+    });
     return {
-      tasks: [...tasks, taskDone]
+      tasks: tasks
     }
   })
 )
 
-export function reducer(state: State | undefined, action: Action){
+export function reducer(state: State | undefined, action: Action) {
   return tasksReducer(state, action)
 }
